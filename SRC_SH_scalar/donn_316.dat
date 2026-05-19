@@ -1,0 +1,37 @@
+EHD force from SUZEN-HUANG model        ! TITLE OF THE PROBLEM
+ER-T3mm-Z1.grd                           ! NC20u.grd   ! FILGRD (name of grid file, e.g. grid.grd)
+.T.    .F.    .T.    .F.    .F.         ! LSCREEN,LREAD,LWRITE,LTEST, LRESAVE
+.F.    .F.    .F.                       ! LPRI,LPRJ,LPRK
+.T.    .T.    .T.    .T.    .F.         ! LCAL(I),I=1,5), U,V,W,P,T
+.F.                                     ! LONGEO
+3   2    2    2                         ! NBLMON,IMON,JMON,KMON (monitor point)
+1   2    2    2                         ! NBLPR,IPR,JPR,KPR     (pressure reference point)
+0.93                                    ! ALFA (SIP solver)
+1   1.E-5  1.E-5  1.E+4  200            ! I_SC, SORMAX, SORMAX2, SLARGE, NSWEEP!(ISC_stopping criteria;1:residual; 2-RM2)
+.T.    .T.                              ! LTIME,LSTORE
+1000    10         0.001                    ! NTM,IMA,DT
+1     1                                 ! ITIME_U, ITIME_T (time scheme for velocity and tempearture: 0 - IE; 1 - I3L)
+1.225   1.85E-05                        ! DENSIT,VISCOS
+0.   0.   0.   0.                       ! UIN,VIN,WIN,TIN
+1.0  1.0  1.0  0.0  1.0                    ! (GDS(I),I=1,5)
+0.9  0.9  0.9  0.2  0.8                 ! (URF(I),I=1,5)
+1.E-4    1.E-4  1.E-4    1.E-5  0.01            ! (SOR(I),I=1,5)
+100    100    100   300   10            ! (NSW(I),I=1,5)
+.T.                                     ! LNONDIMENSION (non-dimensional computation or not?)
+.T.                                     ! LUVWMAX       (output maximum velocity information or not?)
+0.71     0.                             ! PRANL, Ra  (PRANL = 0.71: air; 7 water)
+.F.                                     ! NUSSELT NUMBER _ OUTPUT
+.T.      .F.                            ! LEHD (solving ehd equations?); LHYDROSTATIC(start from hydrostatic solutions ?)
+1.E-4    1.E-4                          ! (ESP_DFC(I),I=6,7)
+50      500                            ! (IT_DFC(I),I=6,7) 
+1                                       ! ITIME_Q (time scheme for charge density: 0-IE; 1-I3L; 2-EE; 3-TVDRK2)
+1.0  1.0                                ! (URF(I),I=6,7)
+1.E-4  1.E-6                            ! (SOR(I),I=6,7)
+500   3000                                 ! (NSW(I),I=6,7)
+.F.    .F.                              ! LETHD(solving ethd equations?), LESP (TEMPERATURE-DEPENDENT permit or mobility?)
+0.     0.                               ! L_permit, N_mobility
+1.                                      ! D_C (!DImensionless coefficient of the SUZEN-Huang Model in the momentum equation for Coulomb force)
+0.2    5000                           ! F_BASE = Hz, VPmax= Volt (frequency and amplitude of applied voltage AC 
+1.0                                   ! LAMBDA = m ..the DEbBYE LENGTH == 0.17mm
+1     0.003                             ! MuLOCATION=0.0205 , sigma= Le/3=0.01/3=0.0033 --for SH model GAussian charge density profile
+0.1                                  ! Qmax = maximum charge density on surface C/m3

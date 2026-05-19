@@ -1,0 +1,69 @@
+GORTLER - DAGAUT ARC90 - VITESSE UNIFORME              ! TITLE
+C_15_05_26.grd                                         ! FILGRD
+.T.    .F.    .T.    .F.    .F.                        ! LSCREEN,LREAD,LWRITE,LTEST,LRESAVE
+.F.    .F.    .T.                                      ! LPRI,LPRJ,LPRK
+.T.    .T.    .T.    .T.    .F.                        ! LCAL U,V,W,P,T
+.F.                                                    ! LONGEO
+
+1   10   40   32                                       ! NBLMON,IMON,JMON,KMON
+1   10   40   32                                       ! NBLPR,IPR,JPR,KPR
+
+0.92                                                   ! ALFA
+
+2   1.E-5   1.E-5   1.E+6   100                         ! I_SC,SORMAX,SORMAX2,SLARGE,NSWEEP
+
+.T.    .T.                                             ! LTIME,LSTORE
+1000   20   1.0E-5                                     ! NTM,IMA,DT
+
+1   1                                                  ! ITIME_U,ITIME_T
+
+1.0   1.0                                              ! DENSIT,VISCOS
+
+1.0  0.0   0.0   0.0                                  ! UIN,VIN,WIN,TIN
+
+1.0   1.0   1.0   0.0   1.0                            ! GDS(I),I=1,5
+
+0.10   0.10   0.10   0.05   1.00                       ! URF(I),I=1,5
+
+1.E-3   1.E-3   1.E-3   1.E-3   0.01                   ! SOR(I),I=1,5
+
+50   50   50   500   10                                ! NSW(I),I=1,5
+
+.T.                                                    ! LNONDIMENSION
+1000.0                                                ! RE_INPUT
+
+.T.                                                    ! LUVWMAX
+
+0.71   0.0                                             ! PRANL,Ra
+
+.F.                                                    ! LNUSSELT
+
+.F.   .F.                                              ! LEHD,LHYDROSTATIC
+
+1.E-4   1.E-4                                          ! ESP_DFC(I),I=6,7
+
+50   500                                               ! ITSWEEP(I),I=6,7
+
+1                                                      ! ITIME_Q
+
+1.0   1.0                                              ! URF(I),I=6,7
+
+1.E-4   1.E-6                                          ! SOR(I),I=6,7
+
+500   3000                                             ! NSW(I),I=6,7
+
+.F.   .F.                                              ! LETHD,LESP
+
+0.0   0.0                                              ! L_PERMIT,N_MOBILITY
+
+0.0                                                    ! D_C
+
+0.0   0.0                                              ! F_BASE,VPMAX
+
+0.0                                                    ! LAMBDA
+
+0.0   0.0                                              ! MULOCATION,SIGMA
+
+0.0                                                    ! QMAX
+
+.T.                                                    ! LVORTEX

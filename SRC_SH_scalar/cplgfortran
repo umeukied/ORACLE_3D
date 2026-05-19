@@ -1,0 +1,21 @@
+
+
+gfortran -O3 -g -fbacktrace -cpp -DREAL_KIND=8 -fdefault-real-8 -ffree-line-length-none dec.F90 geom.f90 usercod.f90 oracle3D_400.f90 -o ER-caseZ1
+
+
+# gfortran -O0 -g -fbacktrace -cpp -DREAL_KIND=8 -fdefault-real-8 -ffree-line-length-none -fcheck=all -ffpe-trap=invalid,zero,overflow -Wall -Wextra dec.F90 geom.f90 usercod.f90 oracle3D_400.f90 -o ER-caseZ1_dbg
+
+
+
+
+
+#ifort -warn interfaces -xHost -DREAL_KIND=8 -r8 dec.F90 geom.f90 usercod.f90 oracle3D_400.f90 -o SH3DZ50
+#ifort -O3 -traceback -DREAL_KIND=8 -r8 dec.F90 geom.f90 usercod.f90 oracle3D_400.f90 -o ER-caseZ1
+#ifort -heap-arrays -xHost -DREAL_KIND=8 -r8 dec.F90 geom.f90 usercod.f90 oracle3D_400.f90 -o SH3DZ50
+
+
+#ifort -O3 -c dec.F90
+#ifort -O3 -c usercod.f90
+#ifort -O3 -c geom.f90
+#ifort -O3 $1.f90 usercod.o geom.o -o $1
+
